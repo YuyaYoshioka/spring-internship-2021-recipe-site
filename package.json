@@ -1,0 +1,30 @@
+{
+  "name": "spring-internship-2021-recipe-site",
+  "version": "1.0.0",
+  "description": "Cookpad Online Spring Internship 2021 のリポジトリです。インターンシップ参加者はこのリポジトリを fork してアプリケーションを実装してください。",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "next": "^10.0.9",
+    "react-dom": "^17.0.2",
+    "react": "^17.0.2",
+    "typescript": "^4.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuyaYoshioka/spring-internship-2021-recipe-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YuyaYoshioka/spring-internship-2021-recipe-site/issues"
+  },
+  "homepage": "https://github.com/YuyaYoshioka/spring-internship-2021-recipe-site#readme"
+}
