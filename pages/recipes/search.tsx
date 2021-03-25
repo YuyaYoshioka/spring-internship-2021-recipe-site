@@ -10,15 +10,21 @@ import SearchBar from '../../components/SearchBar/search-bar';
 const SearchResult: FC = () => {
   const router = useRouter();
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
   const [links, setLinks] = useState<Links>()
+  const [searchResult, setSearchResult] = useState<boolean>(true);
 
   const keyword = String(router.query.keyword);
 
   useEffect(() => {
     (async () => {
       const result = await searchRecipes(keyword);
-      setLinks(result.links);
       setRecipes(result.recipes);
+      setLinks(result.links);
+      setLoading(true);
+      if (Object.keys(result).includes('message')) {
+        setSearchResult(false);
+      }
     })();  
   }, [keyword]);
 
@@ -26,6 +32,12 @@ const SearchResult: FC = () => {
     setRecipes(recipes);
     setLinks(links);
   };
+
+  if (!loading) {
+    return (
+      <p>Loading...</p>
+    );
+  }
 
   return (
     <>
@@ -35,7 +47,6 @@ const SearchResult: FC = () => {
         </Link>
       </h1>
       <SearchBar />
-      {!recipes && <p>検索条件に一致するレシピは存在しません</p>}
       {recipes && <RecipeListNode recipes={recipes}/>}
       {links?.prev &&
         <Button 
@@ -51,6 +62,7 @@ const SearchResult: FC = () => {
           handleClick={handleClick}
         />      
       }
+      {!searchResult && <p>検索条件に一致するレシピは存在しません</p>}
     </>
   );
 }
