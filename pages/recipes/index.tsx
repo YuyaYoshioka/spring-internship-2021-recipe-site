@@ -41,7 +41,6 @@ const TopPage: FC = () => {
         </Link>
       </h1>      
       <SearchBar />
-      {!recipes && <p>検索条件に一致するレシピは存在しません</p>}
       {recipes &&<RecipeListNode recipes={recipes}/>}
       {links?.prev &&
         <Button 
