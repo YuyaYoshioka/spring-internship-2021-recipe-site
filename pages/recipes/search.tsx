@@ -62,7 +62,6 @@ const SearchResult: FC = () => {
           handleClick={handleClick}
         />      
       }
-      {!searchResult && <p>検索条件に一致するレシピは存在しません</p>}
     </>
   );
 }

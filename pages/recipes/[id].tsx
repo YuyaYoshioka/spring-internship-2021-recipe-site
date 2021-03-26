@@ -39,7 +39,7 @@ const RecipeDetail: FC = () => {
         <div className={style.recipeDetailContainer}>
           <div>
             {recipe.image_url &&
-              <img src={recipe.image_url} alt="recipe-image" width='600'/>
+              <img src={recipe.image_url} alt="recipe-image" width='400'/>
             }
           </div>
           <h2>{recipe.title}</h2>

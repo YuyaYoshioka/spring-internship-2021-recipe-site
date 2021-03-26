@@ -10,7 +10,7 @@ type ButtonProps = {
 };
 
 const Button: FC<ButtonProps> = ({ buttonText, link, handleClick }) => {
-  const onClick = (): void => {
+  const onClick = async () => {
     (async () => {
       const result = await getOtherRecipes(link);
       const recipes = result.recipes;

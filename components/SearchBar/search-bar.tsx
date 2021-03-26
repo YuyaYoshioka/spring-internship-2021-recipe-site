@@ -7,6 +7,7 @@ const SearchBar: FC = () => {
   const [value, setValue] = useState<string>(typeof router.query.keyword === 'undefined' ? '' : String(router.query.keyword));
 
   const onEnter = (): void => {
+    console.log(value)
     if (value === null) return;
     router.push({
       pathname: '/recipes/search',
